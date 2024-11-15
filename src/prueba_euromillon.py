@@ -20,8 +20,9 @@ def imprimir_numeros() -> list:
     while cont < 6:
         bombo = randint(1,50)
         cont += 1
-        numeros.append(bombo)
-    return numeros
+        if bombo not in numeros:
+            numeros.append(bombo)
+    return sorted(numeros)
 
 def imprimir_estrellas():
     estrellas = []
@@ -36,18 +37,18 @@ def imprimir_estrellas():
     while cont < 3:
         estrella = randint(1,12)
         cont += 1
-        estrellas.append(estrella)
-    return estrellas
+        if estrella not in estrellas:
+            estrellas.append(estrella)
+    return sorted(estrellas)
 
 
-def imprimir_euromillon(numeros, estrellas):
+def imprimir_euromillon():
     
-    numeros = " - ".join(map(str, imprimir_numeros()))
-    estrellas = " - ".join(map(str, imprimir_estrellas()))
+    numeros = imprimir_numeros()
+    estrellas = imprimir_estrellas()
 
-    return f"EUROMILLÓN DE HOY\n-----------------\nNºs->{numeros}\n***->{estrellas}"
+    return f"EUROMILLÓN DE HOY\n-----------------\nNºs->{' - '.join(map(str, numeros))}\n***->{' - '.join(map(str, estrellas))}"
 
 
-numeros = imprimir_numeros()
-estrellas = imprimir_estrellas()
-print(imprimir_euromillon(numeros, estrellas))
+
+print(imprimir_euromillon())
