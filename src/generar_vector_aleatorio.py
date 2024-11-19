@@ -14,14 +14,14 @@ def generar_vector(min: int, max: int, rango_vector: int):
     return vector
 
 
-def generar_numero_aleatorio(min: int, max: int):
+def generar_numero_aleatorio(min: int, max: int):#Genera un número aleatorio entre los rangos min(minimo) y max(maximo)
     numero_generado = random.randint(min, max)
     return numero_generado
 
 def main():
     min, max, rango_vector = configurar_vector()
     vector = generar_vector(min, max, rango_vector)
-    print(vector)
+    print("(" + " ".join(map(str,vector)) + ")")
 
 if __name__ == "__main__":
     main() 

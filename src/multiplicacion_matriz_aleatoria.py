@@ -52,11 +52,11 @@ def crear_matrices(f1, c1, f2, c2):
     print("Introduce los elementos de la matriz_a: ")
     for i in range(0, f1):
         for j in range(0, c1):
-            matriz_a[i][j] = float(input(f"Elemento a[{i},{j}]"))
+            matriz_a[i][j] = float(input(f"Matriz a[{i},{j}]"))
     print("Introduce los elementos de la matriz_b: ")
     for i in range(0, f2):
         for j in range(0, c2):
-            matriz_b[i][j] = float(input(f"Elemento a[{i}, {j}]"))
+            matriz_b[i][j] = float(input(f"Matriz b[{i}, {j}]"))
 
     return matriz_a, matriz_b, matriz_c
 
@@ -83,7 +83,7 @@ def main():
     matriz_a, matriz_b, matriz_c = crear_matrices(f1, c1, f2, c2)
     matriz_c = multiplicacion_matrices(matriz_a, matriz_b, matriz_c, f1, f2, c2)
 
-    print(matriz_c)
+    print("Matriz resultante => ", matriz_c)
 
 if __name__ == "__main__":
     main()  
